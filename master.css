@@ -1,0 +1,48 @@
+body{
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.random-btn{
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
+
+body{
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  max-width: 500px;
+  margin: 2rem;
+}
+
+.quote{
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: hsl(240, 12%, 10%);
+  border-left: solid .5rem gold;
+  padding: 1rem 0;
+  padding-left: min(10%, 5rem);
+}
+
+.name{
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: hsl(240, 12%, 31%);
+  margin-top: 2rem;
+  padding-left: min(11%, 5.25rem);
+}
+
+.genre{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: calc(3rem + min(11%, 5.25rem));
+}
