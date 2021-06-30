@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
   margin: 0;
   font-family: 'Raleway', sans-serif;
@@ -5,8 +9,13 @@ body{
 
 .random-btn{
   position: absolute;
-  top: 10%;
+  top: 3rem;
   right: 10%;
+  font-size: 1.2rem;
+  line-height: 120%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 body{
@@ -19,30 +28,64 @@ body{
 main{
   max-width: 500px;
   margin: 2rem;
+  margin-top: 4rem;
 }
 
 .quote{
-  font-size: 2.25rem;
+  font-size: min(2.25rem, calc(1.25rem + 1vw));
   font-weight: 500;
   line-height: 1.2;
   color: hsl(240, 12%, 10%);
   border-left: solid .5rem gold;
-  padding: 1rem 0;
+  padding: 1rem .5rem;
   padding-left: min(10%, 5rem);
+  cursor: default;
+}
+
+.info{
+  margin-left: calc(min(11%, 5.25rem) - 1rem);
+  margin-top: 2rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  color: hsl(240, 12%, 31%);
+}
+
+.info:hover{
+  background: hsl(240, 11%, 21%);
+  color: hsl(0, 0%, 100%);
 }
 
 .name{
-  font-size: 1.5rem;
+  font-size: min(1.5rem, calc(1rem + 0.8vw));
   font-weight: bold;
   line-height: 1.2;
-  color: hsl(240, 12%, 31%);
-  margin-top: 2rem;
-  padding-left: min(11%, 5.25rem);
 }
 
 .genre{
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-  margin-left: calc(3rem + min(11%, 5.25rem));
+  margin-left: 3rem;
+  color: hsl(240, 12%, 41%);
+}
+
+.arrow{
+  animation-name: arrow-blink;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrow-blink {
+  0%{
+    transform: scaleX(1) translateX(-20%);
+  }
+  50%{
+    transform: scaleX(1.5) translateX(0%);
+  }
+  100%{
+    transform: scaleX(1) translateX(-20%);
+  }
+
 }
