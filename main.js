@@ -1,22 +1,29 @@
 window.addEventListener("load", ()=>{
   console.log("window Loaded")
-  const randomBtn = document.querySelector(".random-btn")
+
   const quote = document.querySelector(".quote")
   const name = document.querySelector(".name")
   const genre = document.querySelector(".genre")
 
-  const apiUrl = "https://quote-garden.herokuapp.com/api/v3/quotes/random"
+  const randomBtn = document.querySelector(".random-btn")
+  const anotherBtn = document.querySelector(".info")
 
-  async function getQuote(){
-    const response = await fetch(apiUrl)
+  const apiUrl = "https://quote-garden.herokuapp.com/api/v3/quotes/"
+
+  async function getQuote(target){
+    const response = await fetch(`${apiUrl}${target}`)
     const responseData = await response.json()
     const {quoteText, quoteAuthor, quoteGenre} = responseData.data[0]
     quote.textContent = quoteText
-    name.textContent = `- by ${quoteAuthor}`
+    name.textContent = quoteAuthor
     genre.textContent = quoteGenre
   }
 
-  randomBtn.addEventListener("click", getQuote)
+  randomBtn.addEventListener("click", ()=>getQuote("random"))
 
-  getQuote()
+  anotherBtn.addEventListener("click", ()=> getQuote(`random/?author=${name.textContent}&limit=1`))
+
+  getQuote("random")
+
+
 })
